@@ -1,0 +1,25 @@
+1 criar o projeto: ng new PM-MANU
+
+2 CRIAR COMPONENTES 
+  ng g c paginas/login
+  ng g c paginas /perfil
+
+3 criar o autenticador de rotas 
+  ng g g seguranca/autenticador
+
+4 baixar bootstrap: npm i bootstrap
+   procura a pasta angula.json fora da SRC e localiza a linha 27 e adciona o caminho "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+5 executar progeto: ng s
+
+  configurar as rotas em app.routes.ts
+  
+    {path:'login', component:LoginComponent},
+    {path:'perfil', component:PerfilComponent},
+    {path:'', redirectTo:'/login', pathMatch:'full'},
+
+    mudar em autenticar.guard.ts o return para false, para poder so entra nas rotas quem for autenticado 
+
+    criar o autenticador if(localStorage.getItem('email') != undefined){
+    rota.navigateByUrl('/login');
+  } e ai sim return true
