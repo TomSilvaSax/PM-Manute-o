@@ -270,7 +270,7 @@ body {
 }
 
 form button[type="submit"] {
-  background: #1db954;
+  background: rgb(58, 57, 80);
   border: 2px solid #ffff;
   color: #ffff;
   border-radius: 15px 0;
