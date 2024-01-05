@@ -25,12 +25,14 @@ export class Postagem{
 	    DT_REGISTRO?:number;
 		DT_INIC_CONSEQ?:number;
 		DT_FIM_CONSEQ?:number;
+		DT_ENVIO?:number;
 		DESC_ITEM_COMENTARIO?:string;
 		LATITUDE?:number;
 		LONGITUDE?:number;
 		EQUIPE_SUGERIDA?:string;
 		QNTD_AJUSTADA?:Number;
-		ACESSO_CAMINHAO?:string
+		ACESSO_CAMINHAO?:string;
+		IMPEDIMENTO_CAMPO?:String
 
 }
 
