@@ -11,5 +11,5 @@ export const autenticadorGuard: CanActivateFn = (route, state) => {
     rota.navigateByUrl('/login');
   }
 
-  return false;
+  return true;
 };

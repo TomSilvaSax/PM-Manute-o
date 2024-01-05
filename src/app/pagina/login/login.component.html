@@ -1,78 +1,73 @@
-<body>
+<nav id="navbar">
+    <div class="navbar-container">
+        <img src="/img/logo.png" alt="" class="logo">
+        <ul class="navbar-items">
+            <li><a href="preimium.html" class="navbar-item">PM - PLANO DE MANUTENÇÃO</a></li>
+            <li><a href="preimium.html" class="navbar-item">Inscrever-se</a> </li>
 
-    <nav id="navbar">
-        <div class="navbar-container">
-            <img src="/img/logo.png" alt="" class="logo">
-            <ul class="navbar-items">
-                <li><a href="preimium.html" class="navbar-item">PM - PLANO DE MANUTENÇÃO</a></li>
-                <li><a href="preimium.html" class="navbar-item">Inscrever-se</a> </li>
-
-            </ul>
-            <div class="menu-mobile">
-                <img src="/img/menu.png" alt="menu" />
-            </div>
+        </ul>
+        <div class="menu-mobile">
+            <img src="/img/menu.png" alt="menu" />
         </div>
+    </div>
 
-    </nav>
+</nav>
 
-    <div id="showcase">
-        <!-- <p>{{formulario.value | json}}</p>
+<div id="showcase">
+    <!-- <p>{{formulario.value | json}}</p>
         <P *ngIf="formulario.get('email')?.hasError('required')">Informe o email.</P>
         <P *ngIf="formulario.get('email')?.hasError('email')">Informe o email valido.</P> -->
 
-        <form [formGroup]="formulario" class="menu" action="/login" method="post">
+    <form [formGroup]="formulario" class="menu" (submit)="autenticar()" action="/login" method="post">
 
-            <label for="usuario">Usuário</label>
+        <label for="usuario">Usuário</label>
 
-            <input placeholder="Informe seu e-mail" formControlName="email" type="email" name="email" id="usuario"
-                required />
+        <input placeholder="Informe seu e-mail" formControlName="email" type="email" name="email" id="usuario"
+            required />
 
-            <label for="senha">Senha</label>
+        <label for="senha">Senha</label>
 
-            <input placeholder="Informe sua senha" formControlName="senha" type="password" name="senha" id="senha"
-                required />
-            <br />
-            <button type="submit" value="Entrar">Entrar</button>
+        <input placeholder="Informe sua senha" formControlName="senha" type="password" name="senha" id="senha"
+            required />
+        <br />
+        <button type="submit" value="Entrar">Entrar</button>
 
-        </form>
+    </form>
 
+</div>
+
+
+<footer id="footer">
+    <div class="footer-content">
+        <img src="img/logo.png" alt="" class="logo">
+        <ul class="footer-menu">
+            <p>Empresa</p>
+            <li class="footer-menu-item">Sobre</li>
+            <li class="footer-menu-item">Empregos</li>
+            <li class="footer-menu-item"></li>
+
+        </ul>
+        <ul class="footer-menu">
+            <p>Comunidades</p>
+            <li class="footer-menu-item">Missao</li>
+            <li class="footer-menu-item">Sustentabilidade</li>
+            <li class="footer-menu-item">Investidores</li>
+            <li class="footer-menu-item">Fornecedores</li>
+
+        </ul>
+        <ul class="footer-menu">
+            <p>links úteis</p>
+            <li class="footer-menu-item">Ajuda</li>
+            <li class="footer-menu-item">-------</li>
+            <li class="footer-menu-item">Aplicativos móvel grátis</li>
+
+        </ul>
+
+        <div class="socials">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+        </div>
     </div>
 
-
-    <footer id="footer">
-        <div class="footer-content">
-            <img src="img/logo.png" alt="" class="logo">
-            <ul class="footer-menu">
-                <p>Empresa</p>
-                <li class="footer-menu-item">Sobre</li>
-                <li class="footer-menu-item">Empregos</li>
-                <li class="footer-menu-item"></li>
-
-            </ul>
-            <ul class="footer-menu">
-                <p>Comunidades</p>
-                <li class="footer-menu-item">Missao</li>
-                <li class="footer-menu-item">Sustentabilidade</li>
-                <li class="footer-menu-item">Investidores</li>
-                <li class="footer-menu-item">Fornecedores</li>
-
-            </ul>
-            <ul class="footer-menu">
-                <p>links úteis</p>
-                <li class="footer-menu-item">Ajuda</li>
-                <li class="footer-menu-item">-------</li>
-                <li class="footer-menu-item">Aplicativos móvel grátis</li>
-
-            </ul>
-
-            <div class="socials">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-facebook-f"></i>
-            </div>
-        </div>
-
-    </footer>
-
-
-</body>
+</footer>

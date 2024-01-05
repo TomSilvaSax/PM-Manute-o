@@ -1,1 +1,217 @@
-<p>perfil works!</p>
+<nav id="navbar">
+    <div class="navbar-container">
+        <img src="/img/logo.png" alt="" class="logo">
+        <ul class="navbar-items">
+            <li><a href="preimium.html" class="navbar-item">PM - PLANO DE MANUTENÇÃO</a></li>
+            <li><a href="preimium.html" class="navbar-item">Bem Vindo(a)</a> </li>
+
+        </ul>
+        <div class="menu-mobile">
+            <img src="/img/menu.png" alt="menu" />
+        </div>
+    </div>
+    <div class="navbar-containerHome">
+        <img src="/img/logo.png" alt="" class="logo">
+        <ul class="navbar-items">
+            <li><a href="preimium.html" class="navbar-item">Home</a></li>
+            <li><a href="preimium.html" class="navbar-item">Carteira</a> </li>
+            <li><a href="preimium.html" class="navbar-item">Carteira</a> </li>
+            <li><a href="preimium.html" class="navbar-item">Carteira</a> </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+<div id="showcase">
+
+    <div id="table">
+
+        <div id="titulo-tabela"> Unidade Territorial </div>
+
+        <table class="table">
+            <thead>
+
+                <tr>
+                    <th>Localização</th>
+                    <th>Codigo da Localização</th>
+                    <th>Descrição</th>
+                    <th>Observação</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of postagens">
+                    <td>
+                <tr>{{p.DESC_LOCAL_ATIVO_INSP}}</tr>
+
+
+                <td>
+                    <tr>{{p.NUM_CONSEQUENCIA}}</tr>
+                    <tr>COMPLEMENTO: {{p.CHAVE_DIRECIONADORA}}</tr>
+                    <tr>X {{p.LATITUDE}}</tr>
+                    <tr>Y {{p.LONGITUDE}}</tr>
+                    <tr>TRECHO DO PLANO: {{p.LOCAL_DO_DEFEITO}}</tr>
+                    <tr>QTD APONTADA: {{p.QNTD_AJUSTADA}}</tr>
+                    <tr>ACESSO CAMINAO: {{p.ACESSO_CAMINHAO}}</tr>
+                </td>
+
+
+                <td>
+                    <tr> {{[ p.DEFEITO, p.DESC_ITEM_COMENTARIO]}}
+                    <tr>
+                    <tr>TURMA SUJERIDA: {{ p.EQUIPE_SUGERIDA}}</tr>
+                </td>
+                <td>
+
+
+                </td>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="filtro">
+        <p>Filtro Atividades</p>
+        <div class="tipo-PM">
+
+            <ul class="navbar-tipo">
+                <li><a href="" class="navbar-item">Estrutural</a></li>
+                <li><a href="" class="navbar-item">Termografico</a> </li>
+                <li><a href="" class="navbar-item">Vegetação</a> </li>
+
+            </ul>
+        </div>
+
+        <div class="seletores">
+
+            <form class="seletores-A">
+
+                <div id="seletores">
+
+                    <label for="UTD">UTD</label>
+
+                    <select name="UTD" id="UTD">
+                        <option *ngFor="let p of postagens" selected disabled>{{ p.UTD }}</option>
+
+                    </select>
+                </div>
+
+                <div id="seletores">
+                    <label for="ativo">Ativo</label>
+
+                    <select name="ativo" id="ativo">
+                        <option selected disabled>Ativo</option>
+                        <option value="IRX">IRX</option>
+                        <option value="JPP">JPP</option>
+                        <option value="IAA">IAA</option>
+                    </select>
+                </div>
+                <div id="seletores">
+                    <label for="chave">Chave</label>
+                    <select name="chave" id="chave">
+                        <option selected disabled>Chave</option>
+                        <option value="H44556">H44556</option>
+
+                    </select>
+                </div>
+                <div id="seletores">
+                    <label for="Seguimento">Seguimento</label>
+                    <select name="Seguimento" id="Seguimento">
+                        <option selected disabled>Seguimento</option>
+                        <option value="H44556">H44556</option>
+
+                    </select>
+                </div>
+
+
+            </form>
+
+            <form class="seletores-A">
+
+                <div id="seletores">
+
+                    <label for="UTD">Acesso</label>
+
+                    <select name="UTD" id="UTD">
+                        <option selected disabled>Acesso</option>
+                        <option value="FSA">FSA</option>
+                        <option value="SRI">SRI</option>
+                        <option value="IRR">IRR</option>
+                    </select>
+                </div>
+
+                <div id="seletores">
+                    <label for="ativo">Turma</label>
+
+                    <select name="ativo" id="ativo">
+                        <option selected disabled>Turma</option>
+                        <option value="IRX">IRX</option>
+                        <option value="JPP">JPP</option>
+                        <option value="IAA">IAA</option>
+                    </select>
+                </div>
+                <div id="seletores">
+                    <label for="chave">Carteira</label>
+                    <select name="chave" id="chave">
+                        <option selected disabled>Carteira</option>
+                        <option value="H44556">H44556</option>
+
+                    </select>
+                </div>
+                <div id="seletores">
+                    <label for="Seguimento">----</label>
+                    <select name="Seguimento" id="Seguimento">
+                        <option selected disabled>Selecione</option>
+                        <option value="H44556">H44556</option>
+
+                    </select>
+                </div>
+
+
+            </form>
+
+
+
+        </div>
+
+        <div class="turmas">Turmas para atendimento</div>
+
+        <form class="seletores-B">
+
+            <div id="seletores">
+
+                <label for="UTD/EPS">UTD/EPS</label>
+
+                <select name="UTD" id="UTD">
+                    <option selected disabled>UTD/EPS</option>
+                    <option value="FSA">FSA</option>
+                    <option value="SRI">SRI</option>
+                    <option value="IRR">IRR</option>
+                </select>
+            </div>
+
+            <div id="seletores">
+                <label for="ativo">Turma</label>
+
+                <select name="ativo" id="ativo">
+                    <option selected disabled>Turma</option>
+                    <option value="IRX">IRX</option>
+                    <option value="JPP">JPP</option>
+                    <option value="IAA">IAA</option>
+                </select>
+            </div>
+
+            <div class="button">
+                <button type="submit" value="Salvar">Salvar</button>
+                <button type="submit" value="Imprimir">Imprimir</button>
+
+
+            </div>
+        </form>
+
+    </div>
+
+
+
+</div>
