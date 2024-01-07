@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { PostagemService } from '../../servicos/postagem.service';
-import { Postagem } from '../../modelos/Postagem';
+import { Defeitos } from '../../modelos/Defeitos';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-carteira',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './carteira.component.html',
   styleUrl: './carteira.component.css'
 })
@@ -18,21 +19,24 @@ export class CarteiraComponent {
 
    // Vetor de Postagens
    
-   postagens:Postagem[] = [];
+   defeitos:Defeitos[] = [];
    
    // Ao iniciar (o componente é criado)
    ngOnInit(){
-     this.listarPostagens()
+     this.listarDefeitos()
    }
    
    // Funcao para listar postaens
-   listarPostagens():void{
-     this.servicoPostagem.listarPostagens()
+   listarDefeitos():void{
+     this.servicoPostagem.listarDefeitos()
      .subscribe(retorno => { 
        // console.table(retorno);
-       this.postagens = retorno;
+       this.defeitos = retorno;
       })
    }
+   sair():void{
+    localStorage.removeItem('email')
+  }
    
    }
    

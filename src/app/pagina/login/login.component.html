@@ -3,8 +3,6 @@
         <img src="/img/logo.png" alt="" class="logo">
         <ul class="navbar-items">
             <li><a href="preimium.html" class="navbar-item">PM - PLANO DE MANUTENÇÃO</a></li>
-            <li><a href="preimium.html" class="navbar-item">Inscrever-se</a> </li>
-
         </ul>
         <div class="menu-mobile">
             <img src="/img/menu.png" alt="menu" />
@@ -14,23 +12,43 @@
 </nav>
 
 <div id="showcase">
-    <!-- <p>{{formulario.value | json}}</p>
-        <P *ngIf="formulario.get('email')?.hasError('required')">Informe o email.</P>
-        <P *ngIf="formulario.get('email')?.hasError('email')">Informe o email valido.</P> -->
 
-    <form [formGroup]="formulario" class="menu" (submit)="autenticar()" action="/login" method="post">
+    <form *ngIf="mostrarDiv1" Class="div1" [formGroup]="formulario" class="menu" (submit)="autenticar()" action="/login"
+        method="post">
 
         <label for="usuario">Usuário</label>
 
         <input placeholder="Informe seu e-mail" formControlName="email" type="email" name="email" id="usuario"
             required />
 
+        <P *ngIf="formulario.get('email')?.hasError('required')">Por favor informe o email.</P>
+        <P *ngIf="formulario.get('email')?.hasError('email')">Informe o email valido.</P>
+
         <label for="senha">Senha</label>
 
         <input placeholder="Informe sua senha" formControlName="senha" type="password" name="senha" id="senha"
             required />
-        <br />
+        <div id="solicitar">
+            <li><a (click)=" alternarDivs()
+                " class="navbar-item">Solicitar Cadastro</a> </li>
+        </div>
         <button type="submit" value="Entrar">Entrar</button>
+
+    </form>
+
+
+    <form *ngIf="!mostrarDiv1" Class="div2" [formGroup]="formularioSolicitarCadastro" class="solicitarCadastro">
+        <h5>Solicitar Cadastro</h5>
+
+        <div class="solicitarCadastro"></div>
+
+        <p>Nome: <input type="text" formControlName="nome" placeholder="Informe seu nome"></p>
+        <p>E-mail: <input type="text" formControlName="email" placeholder="Informe seu e-mail"></p>
+        <p>Usuario: <input type="text" formControlName="Usuario" placeholder="Informe seu usuario"></p>
+        <p>Empresa: <input type="text" formControlName="Empresa" placeholder="Informe a empresa"></p>
+        <p>Matricula: <input type="text" formControlName="matricula" placeholder="Informe sua matricula"></p>
+        <p>senha: <input type="text" formControlName="senha" placeholder="Informe sua senha"></p>
+        <p><input type="submit" formControlName="Enviar" (click)="cadastrar(); alternarDivs()"></p>
 
     </form>
 

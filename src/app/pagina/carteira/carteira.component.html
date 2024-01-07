@@ -17,7 +17,7 @@
             <li><a href="/admin" class="navbar-item">Home</a></li>
             <li><a href="/perfil" class="navbar-item">Pagina Impressão</a> </li>
             <li><a href="/carteira" class="navbar-item">Carteira</a> </li>
-            <li><a href="/login" class="navbar-item">Sair</a> </li>
+            <li><a href="/login" (click)="sair()" class="navbar-item">Sair</a> </li>
 
         </ul>
 
@@ -30,11 +30,11 @@
 
         <div class="tabela_defeito">
 
-            <h4>Cartaeira</h4>
+            <h4>Carteira</h4>
             <p>Poda Arvore BT</p>
             <p>Poda Arvore AT</p>
-            <p>Poda Cico 2</p>
-            <p>Cruzeta MAdeira</p>
+            <p>Poda Ciclo 2</p>
+            <p>Cruzeta Madeira</p>
 
 
         </div>
@@ -62,7 +62,7 @@
                             <label for="UTD">UTD</label>
 
                             <select name="UTD" id="UTD">
-                                <option *ngFor="let p of postagens" selected disabled>{{ p.UTD }}</option>
+                                <option *ngFor="let p of defeitos" selected disabled>{{ p.UTD }}</option>
 
                             </select>
                         </div>
@@ -127,7 +127,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of postagens">
+                <tr *ngFor="let p of defeitos">
 
 
                     <td>{{p.NUM_CONSEQUENCIA}}</td>

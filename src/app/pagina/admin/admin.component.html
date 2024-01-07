@@ -25,6 +25,31 @@
 </nav>
 
 <div id="showcase">
+    <h2>Solicitações pendentes de aprovação.</h2>
 
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Usuario</th>
+                <th>Empresa</th>
+                <th>Matricula</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of solicitarCadastro">
+                <td>{{a.nome}}</td>
+                <td>{{a.email}}</td>
+                <td>{{a.Usuario}}</td>
+                <td>{{a.Empresa}}</td>
+                <td>{{a.matricula}}</td>
+                <td><button>Aprovar</button><button (click)="remover(a.id || 0)">Remover</button></td>
+
+            </tr>
+        </tbody>
+    </table>
 
 </div>
